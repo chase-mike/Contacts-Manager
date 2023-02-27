@@ -1,0 +1,14 @@
+Name | Phone number
+---------------
+Jack Blank | 1231231234
+Jane Doe | 2342342345
+Sam Space | 3453453456
+Lenny Morrison | 7356747046
+Madeline Moore	| 3290545367
+Henry Richards | 4799581535
+Heather	Morris | 3132318164
+Julian	Barrett | 3725899182
+Abraham	Sullivan | 2594284541
+Edward	Parker | 7712899273
+Valeria	Perry | 1215226802
+
