@@ -3,4 +3,3 @@ Name           | Phone Number
 Jane Doe	   | 1234567890
 Jack Blank	   | 0987654321
 Sam Clear	   | 1029384756
-
