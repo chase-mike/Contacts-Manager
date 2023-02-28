@@ -1,12 +1,6 @@
-Name | Phone number
----------------
-Jack Black | 1234567890
-Jane Doe | 0987654321
-Sam Space | 3453453456
-Lenny Morrison | 7356747046
-Madeline Moore	| 3290545367
-Henry Richards | 4799581535
-Heather	Morris | 3132318164
-Julian	Barrett | 3725899182
-Edward	Parker | 7712899273
-
+Name           | Phone Number
+------------------------------
+Jane Doe	   | 1234567890
+Jack Blank	   | 0987654321
+Sam Clear	   | 1029384756
+Chase Medford	| 2102101234

@@ -3,7 +3,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
@@ -24,8 +23,6 @@ public class updateContacts {
     }
 
     public static void printList() throws Exception{
-        System.out.println("Name | Phone number");
-        System.out.println("-------------------");
         Path contactsPath = Paths.get("src/contactsList.txt");
         List<String> contactsList = Files.readAllLines(contactsPath);
         try {
@@ -47,12 +44,12 @@ public class updateContacts {
         String phoneNumber = scanner.nextLine();
         Files.write(
                 Paths.get("src/contactsList.txt"),
-                List.of(firstName + " " + lastName + " | " + phoneNumber),
+                List.of(firstName + " " + lastName + "\t" + "| " + phoneNumber),
                 StandardOpenOption.APPEND
         );
     }
     public static void searchLast() throws IOException {
-        System.out.println("Enter the last name of the contact you would like to search for:");
+        System.out.println("Enter the name of the contact you would like to search for:");
         Scanner scanner = new Scanner(System.in);
         String lastName = scanner.nextLine();
         Path contactsPath = Paths.get("src/contactsList.txt");
@@ -62,8 +59,6 @@ public class updateContacts {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Name | Phone number");
-        System.out.println("-------------------");
         for (String s : contactsList) {
             if (s.contains(lastName)) {
                 System.out.println(s);
@@ -85,7 +80,6 @@ public class updateContacts {
             if (s.contains(info)) {
                 contactsList.remove(s);
                 System.out.println("Contact deleted!");
-                System.out.println(contactsList);
                 break;
             }
         }
