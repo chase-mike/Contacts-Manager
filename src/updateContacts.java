@@ -3,11 +3,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 
+//-----------------MAIN MENU-----------------//
 public class updateContacts {
     public static int mainMenu(String[] args) {
         System.out.println("Welcome to your contacts list!");
@@ -23,9 +22,8 @@ public class updateContacts {
         return userChoice;
     }
 
+    //-----------------PRINT LIST-----------------//
     public static void printList() throws Exception{
-        System.out.println("Name | Phone number");
-        System.out.println("-------------------");
         Path contactsPath = Paths.get("src/contactsList.txt");
         List<String> contactsList = Files.readAllLines(contactsPath);
         try {
@@ -37,6 +35,8 @@ public class updateContacts {
             System.out.println(contact);
         }
     }
+
+    //-----------------ADD CONTACT-----------------//
     public static void addContact() throws Exception{
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the first name of the contact you would like to add:");
@@ -47,12 +47,14 @@ public class updateContacts {
         String phoneNumber = scanner.nextLine();
         Files.write(
                 Paths.get("src/contactsList.txt"),
-                List.of(firstName + " " + lastName + " | " + phoneNumber),
+                List.of(firstName + " " + lastName + "\t" + "| " + phoneNumber),
                 StandardOpenOption.APPEND
         );
     }
+
+    //-----------------SEARCH CONTACT-----------------//
     public static void searchLast() throws IOException {
-        System.out.println("Enter the last name of the contact you would like to search for:");
+        System.out.println("Enter the name of the contact you would like to search for:");
         Scanner scanner = new Scanner(System.in);
         String lastName = scanner.nextLine();
         Path contactsPath = Paths.get("src/contactsList.txt");
@@ -62,14 +64,14 @@ public class updateContacts {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Name | Phone number");
-        System.out.println("-------------------");
         for (String s : contactsList) {
             if (s.contains(lastName)) {
                 System.out.println(s);
             }
         }
     }
+
+    //-----------------DELETE CONTACT-----------------//
     public static void deleteContact() throws IOException {
         System.out.println("Enter the name or number of the contact you would like to delete:");
         Scanner scanner = new Scanner(System.in);
@@ -85,7 +87,6 @@ public class updateContacts {
             if (s.contains(info)) {
                 contactsList.remove(s);
                 System.out.println("Contact deleted!");
-                System.out.println(contactsList);
                 break;
             }
         }
@@ -95,16 +96,10 @@ public class updateContacts {
         );
     }
 
-    private static Collection<Object> contactsList(int i) {
-        return null;
-    }
-
-
+    //-----------------EXIT-----------------//
     public static void exit(){
         System.out.println("Exiting...Goodbye!");
         System.exit(0);
     }
-
-
 
 }

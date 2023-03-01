@@ -14,7 +14,7 @@ public class mainMenu {
             } else if( userChoice == 5){
                 updateContacts.exit();// if users input is 5, exit method will be used
            } else {
-           System.out.println("Invalid Input");// andything else will sout "Invalid Input"
+           System.out.println("Invalid Input");// anything else will sout "Invalid Input"
             }
         }
     }
